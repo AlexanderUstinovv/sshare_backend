@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: sshare
+  profiles: development
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://173.249.37.118/sshare_test
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      idle-timeout: 10000
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  sshare:
+    file-store:
+        path: /Users/alexander_ustinov/data
+
+server:
+  port: 8080

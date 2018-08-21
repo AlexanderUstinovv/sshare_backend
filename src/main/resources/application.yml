@@ -12,11 +12,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
   sshare:
     file-store:
         path: /Users/alexander_ustinov/data
+    jwt-config:
+      jwt-secret: JWTSuperSecretKey
+      jwt-expiration-in-ms: 604800000
 
 server:
   port: 8080

@@ -17,9 +17,20 @@ public class SshareProperties {
     @Valid
     public FileStore fileStore = new FileStore();
 
+    @Valid
+    public JwtConfig jwtConfig = new JwtConfig();
+
     @Data
     public class FileStore {
         @NotNull
         private String path;
+    }
+
+    @Data
+    public class JwtConfig {
+        @NotNull
+        private String jwtSecret;
+        @NotNull
+        private int jwtExpirationInMs;
     }
 }

@@ -4,6 +4,8 @@ import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Image")
@@ -20,4 +22,10 @@ public class Image {
     @NaturalId
     @Column(name = "name")
     private String name;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "image_objects",
+            joinColumns = @JoinColumn(name = "image_id"),
+            inverseJoinColumns = @JoinColumn(name = "imageobject_id"))
+    private Set<ImageObject> imageObjects = new HashSet<>();
 }

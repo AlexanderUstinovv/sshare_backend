@@ -5,14 +5,14 @@ spring:
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://173.249.37.118/sshare_test
+    url: jdbc:mysql://188.246.233.69:3306/sshare_test
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       idle-timeout: 10000
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
 
   sshare:
     file-store:
